@@ -1,1 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@200;400;700&display=swap');
+
+$white: #FFFFFF;
+$light: #F2E8DC;
+$medium: #A69B8D;
+$darker: #73675C;
+$darkest: #40342E;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: $darkest;
+  background-color: $medium;
+}
+
+section {
+  background-color: $light;
+  margin: 1em 0;
+  padding: .25em;
+}
+
+h1 {
+  font-family: 'Mukta', sans-serif;
+  text-align: center;
+  padding: .5em 0 0 0;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Shopping List Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,64 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
-      <h1>Browser Template</h1>
+      <header>
+        <h1>Shopping List Tracker</h1>
+      </header>
+
+      <section id="authentication">
+        <h3>User Login Area</h3>
+
+        <div id="sign-in" class="user-auth">
+          <h4>Sign Up</h4>
+          <form>
+            <fieldset>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input type="submit" value="Sign Up" class="button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-in" class="user-auth">
+          <h4>Sign Up</h4>
+          <form>
+            <fieldset>
+              <input type="text" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" value="Sign In" class="button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="change-password" class="user-auth">
+          <h4>Change Password</h4>
+          <form>
+            <fieldset>
+              <input type="password" name="passwords[old]" placeholder="Old Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+              <input type="submit" value="Change Password" class="button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-out" class="user-auth">
+          <h4>Sign Out</h4>
+          <form>
+            <fieldset>
+              <input type="submit" value="Sign Out" class="button">
+            </fieldset>
+          </form>
+        </div>
+
+      </section>
+
+      <section id="viewer">
+        <h3>Lists will load here...</h3>
+      </section>
+
+
     </body>
 </html>

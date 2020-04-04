@@ -24,20 +24,20 @@ API
 Client
 
 1.  [x] [Download Browser Template](https://git.generalassemb.ly/ga-wdi-boston/browser-template)
-1.  [ ] Create a Github Repository
-1.  [ ] [Deploy to Github Pages](https://git.generalassemb.ly/ga-wdi-boston/gh-pages-deployment-guide)
+1.  [x] Create a Github Repository
+1.  [x] [Deploy to Github Pages](https://git.generalassemb.ly/ga-wdi-boston/gh-pages-deployment-guide)
 
 ### API
-1.  [ ] Review [rails-api-one-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-one-to-many) or [rails-api-many-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-many-to-many)
-1.  [ ] Scaffold your resource
-1.  [ ] Test your resource's end points with curl scripts
-1.  [ ] Update resource controller to inherit from Protected or OpenRead controller
-1.  [ ] Test your resource's end points with curl scripts
-1.  [ ] Add the relationship to a User
-1.  [ ] Add User ownership to resource controller
+1.  [x] Review [rails-api-one-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-one-to-many) or [rails-api-many-to-many](https://git.generalassemb.ly/ga-wdi-boston/rails-api-many-to-many)
+1.  [x] Scaffold your resource
+1.  [x] Test your resource's end points with curl scripts
+1.  [x] Update resource controller to inherit from Protected or OpenRead controller
+1.  [x] Test your resource's end points with curl scripts
+1.  [x] Add the relationship to a User
+1.  [x] Add User ownership to resource controller
 
 ### Client
-1.  [ ] Review [api-token-auth](https://git.generalassemb.ly/ga-wdi-boston/api-token-auth)
+1.  [x] Review [api-token-auth](https://git.generalassemb.ly/ga-wdi-boston/api-token-auth)
 1.  [ ] Sign Up (curl then web app)
 1.  [ ] Sign In (curl then web app)
 1.  [ ] Change Password (curl then web app)
