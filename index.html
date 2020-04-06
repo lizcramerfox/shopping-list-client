@@ -20,47 +20,53 @@
       <section id="authentication">
         <h3>User Login Area</h3>
 
-        <div id="sign-in" class="user-auth">
+        <div id="auth-message"></div>
+
+        <div id="sign-up" class="user-auth">
           <h4>Sign Up</h4>
           <form>
             <fieldset>
               <input type="text" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Password">
               <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-              <input type="submit" value="Sign Up" class="button">
+              <input type="submit" value="Sign Up" class="auth-button">
             </fieldset>
           </form>
+          <div id="sign-up-message" class="message">sign-up-message</div>
         </div>
 
         <div id="sign-in" class="user-auth">
-          <h4>Sign Up</h4>
+          <h4>Sign In</h4>
           <form>
             <fieldset>
               <input type="text" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="submit" value="Sign In" class="button">
+              <input type="submit" value="Sign In" class="auth-button">
             </fieldset>
           </form>
+          <div id="sign-in-message" class="message">sign-in-message</div>
         </div>
 
-        <div id="change-password" class="user-auth">
+        <div id="change-pw" class="user-auth">
           <h4>Change Password</h4>
           <form>
             <fieldset>
               <input type="password" name="passwords[old]" placeholder="Old Password">
               <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" value="Change Password" class="button">
+              <input type="submit" value="Change Password" class="auth-button">
             </fieldset>
           </form>
+          <div id="change-pw-message" class="message">change-pw-message</div>
         </div>
 
         <div id="sign-out" class="user-auth">
           <h4>Sign Out</h4>
           <form>
             <fieldset>
-              <input type="submit" value="Sign Out" class="button">
+              <input type="submit" value="Sign Out" class="auth-button">
             </fieldset>
           </form>
+          <div id="sign-out-message" class="message">sign-out-message</div>
         </div>
 
       </section>

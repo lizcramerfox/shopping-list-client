@@ -7,6 +7,11 @@ $medium: #A69B8D;
 $darker: #73675C;
 $darkest: #40342E;
 
+$success-background: #9cdaaa;
+$success-text: #20562d;
+$fail-background: #f5bdbd;
+$fail-text: #6e1111;
+
 body {
   font-family: 'Montserrat', sans-serif;
   color: $darkest;
@@ -23,4 +28,22 @@ h1 {
   font-family: 'Mukta', sans-serif;
   text-align: center;
   padding: .5em 0 0 0;
+}
+
+.success {
+  background-color: $success-background;
+  color: $success-text;
+}
+
+.failure {
+  background-color: $fail-background;
+  color: $fail-text;
+}
+.message {
+  min-height: 1em;
+  background-color: $white;
+  margin: .25em 0 0;
+  padding: .25em;
+  color: $darkest;
+  font-size: .5em;
 }

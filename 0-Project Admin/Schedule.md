@@ -38,11 +38,11 @@ Client
 
 ### Client
 1.  [x] Review [api-token-auth](https://git.generalassemb.ly/ga-wdi-boston/api-token-auth)
-1.  [ ] Sign Up (curl then web app)
-1.  [ ] Sign In (curl then web app)
-1.  [ ] Change Password (curl then web app)
-1.  [ ] Sign Out (curl then web page)
-1.  [ ] All API calls have success or failure messages
+1.  [x] Sign Up (curl then web app)
+1.  [x] Sign In (curl then web app)
+1.  [x] Change Password (curl then web app)
+1.  [x] Sign Out (curl then web page)
+1.  [x] All API calls have success or failure messages
 1.  [ ] Review [query-ajax-post](https://github.com/ga-wdi-boston/jquery-ajax-post)
 1.  [ ] Create resource (curl then web app)
 1.  [ ] Get all of their owned resources (curl then web app)
