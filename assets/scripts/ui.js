@@ -4,61 +4,69 @@ const store = require('./store')
 // const authEvents = require('./auth-events')
 
 const signUpSuccess = function (data) {
-  $('#sign-up-message').text('Signed up successfully')
-  $('#sign-up-message').removeClass()
-  $('#sign-up-message').addClass('success')
+  // Success-Failure Messages
   $('#auth-message').text('Signed up successfully')
-  $('#sign-up-message').removeClass()
-  $('#sign-up-message').addClass('success')
-  // console.log('signUpSuccess data is: ', data)
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
 }
 
 const signUpFailure = function () {
-  $('#sign-up-message').text('Error signing up: please try again')
-  $('#sign-up-message').removeClass()
-  $('#sign-up-message').addClass('failure')
+  // Success-Failure Messages
+  $('#auth-message').text('Error signing up: please try again')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
   // console.log('signUpFailure data is: ', error)
 }
 
 const signInSuccess = function (data) {
-  $('#sign-in-message').text('Signed in Successfully')
-  $('#sign-in-message').removeClass()
-  $('#sign-in-message').addClass('success')
+  // Success-Failure Messages
+  $('#auth-message').text('Signed in successfully')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
+  // Update UI login views
+  $('#sign-up').addClass('hidden')
+  $('#sign-in').addClass('hidden')
+  $('#change-pw').removeClass('hidden')
+  $('#sign-out').removeClass('hidden')
   // console.log('signInSuccess data is: ', data)
   store.user = data.user
 }
 
 const signInFailure = function () {
-  $('#sign-in-message').text('Error signing in: please try again')
-  $('#sign-in-message').removeClass()
-  $('#sign-in-message').addClass('failure')
+  $('#auth-message').text('Error signing in: please try again')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
   // console.log('signInFailure data is: ', error)
 }
 //
 const changePwSuccess = function (data) {
-  $('#change-pw-message').text('Password Changed Successfully')
-  $('#change-pw-message').removeClass()
-  $('#change-pw-message').addClass('success')
+  $('#auth-message').text('Password changed successfully')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
 }
 
 const changePwFailure = function () {
-  $('#change-pw-message').text('Error on Change Password')
-  $('#change-pw-message').removeClass()
-  $('#change-pw-message').addClass('failure')
+  $('#auth-message').text('Error changing password: please try again')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
 }
 
 const signOutSuccess = function (data) {
-  $('#sign-out-message').text('Signed Out Successfully')
-  $('#sign-out-message').removeClass()
-  $('#sign-out-message').addClass('success')
-
+  $('#auth-message').text('Signed out successfully')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
+  // Update UI login views
+  $('#sign-up').removeClass('hidden')
+  $('#sign-in').removeClass('hidden')
+  $('#change-pw').addClass('hidden')
+  $('#sign-out').addClass('hidden')
   // console.log('signOutSuccess data is: ', data)
 }
 
 const signOutFailure = function () {
-  $('#sign-out-message').text('Error on Sign Out')
-  $('#sign-out-message').removeClass()
-  $('#sign-out-message').addClass('failure')
+  $('#auth-message').text('Error signing out: please try again')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
   // console.log('signOutFailure data is: ', error)
 }
 
