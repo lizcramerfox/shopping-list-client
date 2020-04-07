@@ -45,9 +45,39 @@ const signOut = function (data) {
   })
 }
 
+const viewAllLists = function () {
+  return $.ajax({
+    url: config.apiUrl + '/lists',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const createNewList = function (data) {
+
+  return $.ajax({
+    url: config.apiUrl + '/lists',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      list: {
+        title: data.title,
+        list_type: data.listType,
+        content: data.content
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  viewAllLists,
+  createNewList
 }

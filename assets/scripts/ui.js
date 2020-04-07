@@ -70,6 +70,24 @@ const signOutFailure = function () {
   // console.log('signOutFailure data is: ', error)
 }
 
+const viewAllListsSuccess = function (data) {
+  $('#list-viewer').text('view-all-lists data is: ' + data)
+  console.log(data)
+}
+
+const viewAllListsFailure = function () {
+  $('#list-viewer').text('failed to retrieve list data')
+}
+
+const createNewListSuccess = function (data) {
+  $('#list-viewer').text('new list data is: ' + data)
+  console.log(data)
+}
+
+const createNewListFailure = function () {
+  $('#list-viewer').text('failed to create new list')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -78,5 +96,9 @@ module.exports = {
   changePwSuccess,
   changePwFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  viewAllListsSuccess,
+  viewAllListsFailure,
+  createNewListSuccess,
+  createNewListFailure
 }

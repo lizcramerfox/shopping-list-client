@@ -7,10 +7,13 @@
 // require('./example')
 
 const authEvents = require('./auth-events')
+const listEvents = require('./list-events')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-pw').on('submit', authEvents.onChangePw)
   $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#view-all-lists').on('submit', listEvents.onViewAllLists)
+  $('#create-new-list').on('submit', listEvents.onCreateNewList)
 })

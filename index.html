@@ -67,8 +67,27 @@
 
       </section>
 
-      <section id="viewer">
-        <h3>Lists will load here...</h3>
+      <section id="user-lists">
+        <h3>User Lists</h3>
+
+        <form id="view-all-lists">
+          <fieldset>
+            <input type="submit" value="View My Lists" class="list-button">
+          </fieldset>
+        </form>
+
+        <form id="create-new-list">
+          <fieldset>
+            <input type="text" name="list[title]" placeholder="New List Name">
+            <input type="text" name="list[listType]" placeholder="New List Type">
+            <input type="text" name="list[content]" placeholder="New List Content">
+            <input type="submit" value="Create New List" class="list-button">
+          </fieldset>
+        </form>
+
+        <div id="list-viewer"></div>
+
+
       </section>
 
 
