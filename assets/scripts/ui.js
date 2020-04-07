@@ -3,6 +3,10 @@
 const store = require('./store')
 // const authEvents = require('./auth-events')
 
+/////////////////////////////
+//   USER AUTHENTICATION   //
+/////////////////////////////
+
 const signUpSuccess = function (data) {
   // Success-Failure Messages
   $('#auth-message').text('Signed up successfully')
@@ -70,6 +74,10 @@ const signOutFailure = function () {
   // console.log('signOutFailure data is: ', error)
 }
 
+////////////////////////////
+//  LIST VIEWER HANDLING  //
+////////////////////////////
+
 const viewAllListsSuccess = function (data) {
   $('#list-viewer').text('view-all-lists data is: ' + data)
   console.log(data)
@@ -88,6 +96,33 @@ const createNewListFailure = function () {
   $('#list-viewer').text('failed to create new list')
 }
 
+const viewListByIdSuccess = function (data) {
+  $('#list-viewer').text('List ID #' + data.list.id)
+  console.log(data)
+}
+
+const viewListByIdFailure = function () {
+  $('#list-viewer').text('failed to retrieve your list')
+}
+
+const deleteListByIdSuccess = function (data) {
+  $('#list-viewer').text('List has been deleted')
+  console.log(data)
+}
+
+const deleteListByIdFailure = function () {
+  $('#list-viewer').text('failed to delete your list')
+}
+
+const updateListbyIdSuccess = function (data) {
+  $('#list-viewer').text('list updated. new list data is: ' + data)
+  console.log(data)
+}
+
+const updateListbyIdFailure = function () {
+  $('#list-viewer').text('failed to update your list')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -100,5 +135,11 @@ module.exports = {
   viewAllListsSuccess,
   viewAllListsFailure,
   createNewListSuccess,
-  createNewListFailure
+  createNewListFailure,
+  viewListByIdSuccess,
+  viewListByIdFailure,
+  deleteListByIdSuccess,
+  deleteListByIdFailure,
+  updateListbyIdSuccess,
+  updateListbyIdFailure
 }
