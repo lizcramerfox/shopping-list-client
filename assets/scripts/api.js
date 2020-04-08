@@ -78,21 +78,6 @@ const createNewList = function (data) {
       }
     }
   })
-
-  return $.ajax({
-    url: config.apiUrl + '/lists',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: {
-      list: {
-        title: data.title,
-        list_type: data.listType,
-        content: data.content
-      }
-    }
-  })
 }
 
 const viewListById = function (id) {

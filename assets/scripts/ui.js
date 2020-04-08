@@ -88,10 +88,14 @@ const viewAllListsSuccess = function (data) {
   clearListsViewer()
   const viewListsHtml = useListsHandlerTemplate({ lists: data.lists })
   $('#list-viewer').html(viewListsHtml)
+  $('#list-viewer').removeClass()
 }
 
 const viewAllListsFailure = function () {
-  $('#list-viewer').text('failed to retrieve list data')
+  clearListsViewer()
+  $('#list-viewer').text('Failed to retrieve your lists')
+  $('#list-viewer').removeClass()
+  $('#list-viewer').addClass('failure')
 }
 
 const createNewListSuccess = function (data) {
@@ -102,7 +106,10 @@ const createNewListSuccess = function (data) {
 }
 
 const createNewListFailure = function () {
+  clearListsViewer()
   $('#list-viewer').text('failed to create new list')
+  $('#list-viewer').removeClass()
+  $('#list-viewer').addClass('failure')
 }
 
 const viewListByIdSuccess = function (data) {
@@ -113,25 +120,36 @@ const viewListByIdSuccess = function (data) {
 }
 
 const viewListByIdFailure = function () {
+  clearListsViewer()
   $('#list-viewer').text('failed to retrieve your list')
+  $('#list-viewer').removeClass()
+  $('#list-viewer').addClass('failure')
 }
 
 const deleteListByIdSuccess = function (data) {
   // console.log(data)
+  clearListsViewer()
   $('#list-viewer').text('List successfully deleted.')
+  $('#list-viewer').removeClass()
+  $('#list-viewer').addClass('success')
 }
 
 const deleteListByIdFailure = function () {
-  $('#list-viewer').text('failed to delete your list')
+  clearListsViewer()
+  $('#list-viewer').text('Failed to delete your list')
+  $('#list-viewer').removeClass()
+  $('#list-viewer').addClass('failure')
 }
 
 const updateListbyIdSuccess = function (data) {
+  clearListsViewer()
   $('#list-viewer').text('list updated. new list data is: ' + data)
-  // console.log(data)
+  console.log(data)
 }
 
-const updateListbyIdFailure = function () {
+const updateListbyIdFailure = function (data) {
   $('#list-viewer').text('failed to update your list')
+  console.log(data)
 }
 
 const clearListsViewer = () => {
