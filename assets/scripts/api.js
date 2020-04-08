@@ -52,7 +52,8 @@ const signOut = function (data) {
 //  SHOPPING LIST ROUTES   //
 /////////////////////////////
 
-const viewAllLists = function () {
+const viewAllLists = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'GET',
@@ -63,6 +64,20 @@ const viewAllLists = function () {
 }
 
 const createNewList = function (data) {
+  console.log({
+    url: config.apiUrl + '/lists',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      list: {
+        title: data.title,
+        list_type: data.listType,
+        content: data.content
+      }
+    }
+  })
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'POST',
@@ -79,10 +94,10 @@ const createNewList = function (data) {
   })
 }
 
-const viewListById = function (data) {
-  console.log(data)
+const viewListById = function (id) {
+  console.log(id)
   return $.ajax({
-    url: config.apiUrl + '/lists/' + data.list.id,
+    url: config.apiUrl + '/lists/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -90,10 +105,10 @@ const viewListById = function (data) {
   })
 }
 
-const deleteListById = function (data) {
-  console.log(data)
+const deleteListById = function (id) {
+  console.log(id)
   return $.ajax({
-    url: config.apiUrl + '/lists/' + data.list.id,
+    url: config.apiUrl + '/lists/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -105,17 +120,17 @@ const deleteListById = function (data) {
 const updateListById = function (data) {
   console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/lists/' + data.list.id,
+    url: config.apiUrl + '/lists/' + data.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
       list: {
-        id: data.list.id,
-        title: data.list.title,
-        list_type: data.list.listType,
-        content: data.list.content
+        id: data.id,
+        title: data.title,
+        list_type: data.listType,
+        content: data.content
       }
     }
   })

@@ -1,7 +1,8 @@
 'use strict'
 
 const store = require('./store')
-// const authEvents = require('./auth-events')
+const useListsHandlerTemplate = require('./templates/lists-handler.handlebars')
+const useListHandlerTemplate = require('./templates/list-handler.handlebars')
 
 /////////////////////////////
 //   USER AUTHENTICATION   //
@@ -79,8 +80,10 @@ const signOutFailure = function () {
 ////////////////////////////
 
 const viewAllListsSuccess = function (data) {
-  $('#list-viewer').text('view-all-lists data is: ' + data)
   console.log(data)
+  clearListsViewer()
+  const viewListsHtml = useListsHandlerTemplate({ lists: data.lists })
+  $('#list-viewer').html(viewListsHtml)
 }
 
 const viewAllListsFailure = function () {
@@ -88,8 +91,10 @@ const viewAllListsFailure = function () {
 }
 
 const createNewListSuccess = function (data) {
-  $('#list-viewer').text('new list data is: ' + data)
   console.log(data)
+  clearListsViewer()
+  const createNewListHtml = useListHandlerTemplate({ list: data.list })
+  $('#list-viewer').html(createNewListHtml)
 }
 
 const createNewListFailure = function () {
@@ -97,8 +102,10 @@ const createNewListFailure = function () {
 }
 
 const viewListByIdSuccess = function (data) {
-  $('#list-viewer').text('List ID #' + data.list.id)
   console.log(data)
+  clearListsViewer()
+  const viewListByIdHtml = useListHandlerTemplate({ list: data.list })
+  $('#list-viewer').html(viewListByIdHtml)
 }
 
 const viewListByIdFailure = function () {
@@ -106,8 +113,8 @@ const viewListByIdFailure = function () {
 }
 
 const deleteListByIdSuccess = function (data) {
-  $('#list-viewer').text('List has been deleted')
   console.log(data)
+  $('#list-viewer').text('List successfully deleted.')
 }
 
 const deleteListByIdFailure = function () {
@@ -121,6 +128,10 @@ const updateListbyIdSuccess = function (data) {
 
 const updateListbyIdFailure = function () {
   $('#list-viewer').text('failed to update your list')
+}
+
+const clearListsViewer = () => {
+  $('#list-viewer').empty()
 }
 
 module.exports = {

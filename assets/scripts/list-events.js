@@ -1,10 +1,12 @@
+'use strict'
+
 const api = require('./api')
 const ui = require('./ui')
 // const store = require('./store')
 const getFormFields = require('./../../lib/get-form-fields')
 
 // VIEW ALL LISTS (See all lists for current user)
-const onViewAllLists = function () {
+const onViewAllLists = function (event) {
   event.preventDefault()
   api.viewAllLists()
     .then(ui.viewAllListsSuccess)
@@ -24,16 +26,18 @@ const onCreateNewList = function (event) {
 const onViewListById = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.viewListById(data)
+  console.log('here is', data.list)
+  api.viewListById(data.list.id)
     .then(ui.viewListByIdSuccess)
     .catch(ui.viewListByIdFailure)
 }
 
-// VIEW LIST BY ID (View a user's list individually by ID)
+// DELETE LIST BY ID (View a user's list individually by ID)
 const onDeleteListById = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.deleteListById(data)
+  console.log('here is', data.list.id)
+  api.deleteListById(data.list.id)
     .then(ui.deleteListByIdSuccess)
     .catch(ui.deleteListByIdFailure)
 }
@@ -46,10 +50,21 @@ const onUpdateListById = function (event) {
     .catch(ui.updateListByIdFailure)
 }
 
+// Handlebars Formatting
+const addHandlers = function () {
+  $('#view-all-lists').on('submit', onViewAllLists)
+  $('#create-new-list').on('submit', onCreateNewList)
+  $('#view-list-by-id').on('submit', onViewListById)
+  $('#delete-list-by-id').on('submit', onDeleteListById)
+  $('#update-list-by-id').on('submit', onUpdateListById)
+}
+
+
 module.exports = {
   onViewAllLists,
   onCreateNewList,
   onViewListById,
   onDeleteListById,
-  onUpdateListById
+  onUpdateListById,
+  addHandlers
 }

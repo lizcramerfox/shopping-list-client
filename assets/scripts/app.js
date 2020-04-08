@@ -19,4 +19,5 @@ $(() => {
   $('#view-list-by-id').on('submit', listEvents.onViewListById)
   $('#delete-list-by-id').on('submit', listEvents.onDeleteListById)
   $('#update-list-by-id').on('submit', listEvents.onUpdateListById)
+  listEvents.addHandlers()
 })

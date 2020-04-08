@@ -1,0 +1,32 @@
+{{log list}}
+<section data-id="{{list.id}}">
+  <h4>List ID:</h4>
+  <h6>{{list.id}}</h6>
+
+  <h4>List Title:</h4>
+  <p>
+    {{#if list.title}}
+      {{list.title}}
+    {{else}}
+      n/a
+    {{/if}}
+  </p>
+
+  <h4>List Type:</h4>
+  <p>
+    {{#if list.list_type}}
+      {{list.list_type}}
+    {{else}}
+      n/a
+    {{/if}}
+  </p>
+
+  <h4>List Content:</h4>
+  <p>
+    {{#if list.content}}
+      {{list.content}}
+    {{else}}
+      n/a
+    {{/if}}
+  </p>
+</section>

@@ -30,6 +30,17 @@ h1 {
   padding: .5em 0 0 0;
 }
 
+h4 {
+  font-size: 1em;
+  font-family:'Mukta', sans-serif;
+  color: $darker;
+}
+
+// h6 {
+//   font-family:'Mukta', sans-serif;
+//   color: $darker;
+// }
+
 .success {
   background-color: $success-background;
   color: $success-text;
@@ -39,6 +50,7 @@ h1 {
   background-color: $fail-background;
   color: $fail-text;
 }
+
 .message {
   min-height: 1em;
   background-color: $white;
@@ -58,5 +70,4 @@ h1 {
   margin: .25em 0 0;
   padding: .25em;
   color: $darkest;
-  font-size: .5em;
 }
