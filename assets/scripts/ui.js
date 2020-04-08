@@ -13,6 +13,7 @@ const signUpSuccess = function (data) {
   $('#auth-message').text('Signed up successfully')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
+  $('#sign-up').addClass('success')
 }
 
 const signUpFailure = function () {
@@ -28,11 +29,13 @@ const signInSuccess = function (data) {
   $('#auth-message').text('Signed in successfully')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
-  // Update UI login views
+  // Update UI Login views
   $('#sign-up').addClass('hidden')
   $('#sign-in').addClass('hidden')
   $('#change-pw').removeClass('hidden')
   $('#sign-out').removeClass('hidden')
+  // Show UI List Views
+  $('#user-lists').removeClass('hidden')
   // console.log('signInSuccess data is: ', data)
   store.user = data.user
 }
@@ -43,7 +46,7 @@ const signInFailure = function () {
   $('#auth-message').addClass('failure')
   // console.log('signInFailure data is: ', error)
 }
-//
+
 const changePwSuccess = function (data) {
   $('#auth-message').text('Password changed successfully')
   $('#auth-message').removeClass()
@@ -65,6 +68,7 @@ const signOutSuccess = function (data) {
   $('#sign-in').removeClass('hidden')
   $('#change-pw').addClass('hidden')
   $('#sign-out').addClass('hidden')
+  $('#user-lists').addClass('hidden')
   // console.log('signOutSuccess data is: ', data)
 }
 
@@ -80,7 +84,7 @@ const signOutFailure = function () {
 ////////////////////////////
 
 const viewAllListsSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   clearListsViewer()
   const viewListsHtml = useListsHandlerTemplate({ lists: data.lists })
   $('#list-viewer').html(viewListsHtml)
@@ -91,7 +95,7 @@ const viewAllListsFailure = function () {
 }
 
 const createNewListSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   clearListsViewer()
   const createNewListHtml = useListHandlerTemplate({ list: data.list })
   $('#list-viewer').html(createNewListHtml)
@@ -102,7 +106,7 @@ const createNewListFailure = function () {
 }
 
 const viewListByIdSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   clearListsViewer()
   const viewListByIdHtml = useListHandlerTemplate({ list: data.list })
   $('#list-viewer').html(viewListByIdHtml)
@@ -113,7 +117,7 @@ const viewListByIdFailure = function () {
 }
 
 const deleteListByIdSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#list-viewer').text('List successfully deleted.')
 }
 
@@ -123,7 +127,7 @@ const deleteListByIdFailure = function () {
 
 const updateListbyIdSuccess = function (data) {
   $('#list-viewer').text('list updated. new list data is: ' + data)
-  console.log(data)
+  // console.log(data)
 }
 
 const updateListbyIdFailure = function () {

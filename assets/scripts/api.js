@@ -7,7 +7,7 @@ const store = require('./store')
 //   USER AUTHENTICATION   //
 /////////////////////////////
 const signUp = function (data) {
-  console.log('You are now in: api.js')
+  // console.log('You are now in: api.js')
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -53,7 +53,7 @@ const signOut = function (data) {
 /////////////////////////////
 
 const viewAllLists = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'GET',
@@ -64,7 +64,7 @@ const viewAllLists = function (data) {
 }
 
 const createNewList = function (data) {
-  console.log({
+  return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'POST',
     headers: {
@@ -78,6 +78,7 @@ const createNewList = function (data) {
       }
     }
   })
+
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'POST',
@@ -95,7 +96,7 @@ const createNewList = function (data) {
 }
 
 const viewListById = function (id) {
-  console.log(id)
+  // console.log(id)
   return $.ajax({
     url: config.apiUrl + '/lists/' + id,
     method: 'GET',
@@ -106,7 +107,7 @@ const viewListById = function (id) {
 }
 
 const deleteListById = function (id) {
-  console.log(id)
+  // console.log(id)
   return $.ajax({
     url: config.apiUrl + '/lists/' + id,
     method: 'DELETE',
@@ -118,7 +119,7 @@ const deleteListById = function (id) {
 }
 
 const updateListById = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.id,
     method: 'PATCH',

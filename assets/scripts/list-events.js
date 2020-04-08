@@ -26,7 +26,7 @@ const onCreateNewList = function (event) {
 const onViewListById = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('here is', data.list)
+  // console.log('here is', data.list)
   api.viewListById(data.list.id)
     .then(ui.viewListByIdSuccess)
     .catch(ui.viewListByIdFailure)
@@ -36,7 +36,7 @@ const onViewListById = function (event) {
 const onDeleteListById = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('here is', data.list.id)
+  // console.log('here is', data.list.id)
   api.deleteListById(data.list.id)
     .then(ui.deleteListByIdSuccess)
     .catch(ui.deleteListByIdFailure)
