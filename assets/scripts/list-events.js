@@ -59,7 +59,6 @@ const addHandlers = function () {
   $('#update-list-by-id').on('submit', onUpdateListById)
 }
 
-
 module.exports = {
   onViewAllLists,
   onCreateNewList,

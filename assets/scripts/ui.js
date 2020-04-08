@@ -85,14 +85,12 @@ const signOutFailure = function () {
 
 const viewAllListsSuccess = function (data) {
   // console.log(data)
-  clearListsViewer()
   const viewListsHtml = useListsHandlerTemplate({ lists: data.lists })
   $('#list-viewer').html(viewListsHtml)
   $('#list-viewer').removeClass()
 }
 
 const viewAllListsFailure = function () {
-  clearListsViewer()
   $('#list-viewer').text('Failed to retrieve your lists')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
@@ -100,13 +98,11 @@ const viewAllListsFailure = function () {
 
 const createNewListSuccess = function (data) {
   // console.log(data)
-  clearListsViewer()
   const createNewListHtml = useListHandlerTemplate({ list: data.list })
   $('#list-viewer').html(createNewListHtml)
 }
 
 const createNewListFailure = function () {
-  clearListsViewer()
   $('#list-viewer').text('failed to create new list')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
@@ -114,13 +110,11 @@ const createNewListFailure = function () {
 
 const viewListByIdSuccess = function (data) {
   // console.log(data)
-  clearListsViewer()
   const viewListByIdHtml = useListHandlerTemplate({ list: data.list })
   $('#list-viewer').html(viewListByIdHtml)
 }
 
 const viewListByIdFailure = function () {
-  clearListsViewer()
   $('#list-viewer').text('failed to retrieve your list')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
@@ -128,28 +122,26 @@ const viewListByIdFailure = function () {
 
 const deleteListByIdSuccess = function (data) {
   // console.log(data)
-  clearListsViewer()
+
   $('#list-viewer').text('List successfully deleted.')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('success')
 }
 
 const deleteListByIdFailure = function () {
-  clearListsViewer()
   $('#list-viewer').text('Failed to delete your list')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
 }
 
 const updateListbyIdSuccess = function (data) {
-  clearListsViewer()
   $('#list-viewer').text('list updated. new list data is: ' + data)
-  console.log(data)
+  // console.log(data)
 }
 
 const updateListbyIdFailure = function (data) {
   $('#list-viewer').text('failed to update your list')
-  console.log(data)
+  // console.log(data)
 }
 
 const clearListsViewer = () => {
@@ -174,5 +166,6 @@ module.exports = {
   deleteListByIdSuccess,
   deleteListByIdFailure,
   updateListbyIdSuccess,
-  updateListbyIdFailure
+  updateListbyIdFailure,
+  clearListsViewer
 }
