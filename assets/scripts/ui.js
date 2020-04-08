@@ -91,7 +91,7 @@ const viewAllListsSuccess = function (data) {
 }
 
 const viewAllListsFailure = function () {
-  $('#list-viewer').text('Failed to retrieve your lists')
+  $('#list-viewer').text('Failed to retrieve your lists.')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
 }
@@ -103,7 +103,7 @@ const createNewListSuccess = function (data) {
 }
 
 const createNewListFailure = function () {
-  $('#list-viewer').text('failed to create new list')
+  $('#list-viewer').text('Failed to create new list.')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
 }
@@ -112,35 +112,36 @@ const viewListByIdSuccess = function (data) {
   // console.log(data)
   const viewListByIdHtml = useListHandlerTemplate({ list: data.list })
   $('#list-viewer').html(viewListByIdHtml)
+  $('#list-viewer').removeClass()
 }
 
 const viewListByIdFailure = function () {
-  $('#list-viewer').text('failed to retrieve your list')
+  $('#list-viewer').text('Failed to retrieve your list.')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
 }
 
 const deleteListByIdSuccess = function (data) {
   // console.log(data)
-
   $('#list-viewer').text('List successfully deleted.')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('success')
 }
 
 const deleteListByIdFailure = function () {
-  $('#list-viewer').text('Failed to delete your list')
+  $('#list-viewer').text('Failed to delete your list.')
   $('#list-viewer').removeClass()
   $('#list-viewer').addClass('failure')
 }
 
 const updateListbyIdSuccess = function (data) {
-  $('#list-viewer').text('list updated. new list data is: ' + data)
+  $('#list-viewer').text('List updated. new list data is: ' + data)
+  $('#list-viewer').removeClass()
   // console.log(data)
 }
 
 const updateListbyIdFailure = function (data) {
-  $('#list-viewer').text('failed to update your list')
+  $('#list-viewer').text('Failed to update your list.')
   // console.log(data)
 }
 
