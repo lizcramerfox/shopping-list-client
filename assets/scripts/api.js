@@ -6,6 +6,7 @@ const store = require('./store')
 /////////////////////////////
 //   USER AUTHENTICATION   //
 /////////////////////////////
+
 const signUp = function (data) {
   // console.log('You are now in: api.js')
   return $.ajax({
@@ -16,7 +17,7 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  // console.log('You are now in: api.js')
+  // console.log('You are now in: api.js - signIn')
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -25,7 +26,7 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  // console.log('token is ' + store.user.token)
+  // console.log('You are now in: api.js - changePassword')
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -37,7 +38,7 @@ const changePassword = function (data) {
 }
 
 const signOut = function (data) {
-  // console.log(data)
+  // console.log('You are now in: api.js - signOut')
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
@@ -53,7 +54,7 @@ const signOut = function (data) {
 /////////////////////////////
 
 const viewAllLists = function (data) {
-  // console.log(data)
+  // console.log('SOURCE: api.js')
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'GET',
@@ -64,6 +65,7 @@ const viewAllLists = function (data) {
 }
 
 const createNewList = function (data) {
+  // console.log('SOURCE: api.js')
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'POST',
@@ -81,7 +83,7 @@ const createNewList = function (data) {
 }
 
 const viewListById = function (id) {
-  // console.log(id)
+  // console.log('SOURCE: api.js')
   return $.ajax({
     url: config.apiUrl + '/lists/' + id,
     method: 'GET',
@@ -104,7 +106,8 @@ const deleteListById = function (id) {
 }
 
 const updateListById = function (data) {
-  // console.log(data)
+  console.log('SOURCE: api.js')
+  console.log('api.js data is...' + data)
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.id,
     method: 'PATCH',

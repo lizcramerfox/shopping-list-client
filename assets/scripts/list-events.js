@@ -2,12 +2,12 @@
 
 const api = require('./api')
 const ui = require('./ui')
-// const store = require('./store')
 const getFormFields = require('./../../lib/get-form-fields')
 
 // VIEW ALL LISTS (See all lists for current user)
 const onViewAllLists = function (event) {
   event.preventDefault()
+  // console.log('SOURCE: api.js')
   api.viewAllLists()
     .then(ui.viewAllListsSuccess)
     .catch(ui.viewAllListsFailure)
@@ -16,6 +16,7 @@ const onViewAllLists = function (event) {
 // NEW LIST (Create a new list)
 const onCreateNewList = function (event) {
   event.preventDefault()
+  // console.log('SOURCE: api.js')
   const data = getFormFields(event.target)
   api.createNewList(data.list)
     .then(ui.createNewListSuccess)
@@ -25,6 +26,7 @@ const onCreateNewList = function (event) {
 // VIEW LIST BY ID (View a user's list individually by ID)
 const onViewListById = function (event) {
   event.preventDefault()
+  // console.log('SOURCE: api.js')
   const data = getFormFields(event.target)
   // console.log('here is', data.list)
   api.viewListById(data.list.id)
@@ -35,6 +37,7 @@ const onViewListById = function (event) {
 // DELETE LIST BY ID (View a user's list individually by ID)
 const onDeleteListById = function (event) {
   event.preventDefault()
+  console.log('SOURCE: api.js')
   const data = getFormFields(event.target)
   // console.log('here is', data.list.id)
   api.deleteListById(data.list.id)
@@ -44,19 +47,11 @@ const onDeleteListById = function (event) {
 
 const onUpdateListById = function (event) {
   event.preventDefault()
+  console.log('SOURCE: list-events.js - update')
   const data = getFormFields(event.target)
-  api.updateListById(data)
+  api.updateListById(data.list.id)
     .then(ui.updateListByIdSuccess)
     .catch(ui.updateListByIdFailure)
-}
-
-// Handlebars Formatting
-const addHandlers = function () {
-  $('#view-all-lists').on('submit', onViewAllLists)
-  $('#create-new-list').on('submit', onCreateNewList)
-  $('#view-list-by-id').on('submit', onViewListById)
-  $('#delete-list-by-id').on('submit', onDeleteListById)
-  $('#update-list-by-id').on('submit', onUpdateListById)
 }
 
 module.exports = {
@@ -64,6 +59,5 @@ module.exports = {
   onCreateNewList,
   onViewListById,
   onDeleteListById,
-  onUpdateListById,
-  addHandlers
+  onUpdateListById
 }

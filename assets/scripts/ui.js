@@ -13,7 +13,6 @@ const signUpSuccess = function (data) {
   $('#auth-message').text('Signed up successfully')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
-  $('#sign-up').addClass('success')
 }
 
 const signUpFailure = function () {
@@ -84,69 +83,76 @@ const signOutFailure = function () {
 ////////////////////////////
 
 const viewAllListsSuccess = function (data) {
-  // console.log(data)
   const viewListsHtml = useListsHandlerTemplate({ lists: data.lists })
   $('#list-viewer').html(viewListsHtml)
   $('#list-viewer').removeClass()
+  // console.log('SOURCE: ui.js')
 }
 
 const viewAllListsFailure = function () {
-  $('#list-viewer').text('Failed to retrieve your lists.')
-  $('#list-viewer').removeClass()
-  $('#list-viewer').addClass('failure')
+  $('#list-viewer-message').text('Failed to retrieve your lists.')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('failure')
+  $('#list-viewer').empty()
 }
 
 const createNewListSuccess = function (data) {
-  // console.log(data)
   const createNewListHtml = useListHandlerTemplate({ list: data.list })
   $('#list-viewer').html(createNewListHtml)
+  $('#list-viewer-message').text('List successfully created.')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('success')
+  // console.log('SOURCE: ui.js')
 }
 
 const createNewListFailure = function () {
-  $('#list-viewer').text('Failed to create new list.')
-  $('#list-viewer').removeClass()
-  $('#list-viewer').addClass('failure')
+  $('#list-viewer-message').text('Failed to create new list.')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('failure')
 }
 
 const viewListByIdSuccess = function (data) {
-  // console.log(data)
   const viewListByIdHtml = useListHandlerTemplate({ list: data.list })
   $('#list-viewer').html(viewListByIdHtml)
-  $('#list-viewer').removeClass()
+  $('#list-viewer-message').empty()
+  // console.log('SOURCE: ui.js')
 }
 
 const viewListByIdFailure = function () {
-  $('#list-viewer').text('Failed to retrieve your list.')
-  $('#list-viewer').removeClass()
-  $('#list-viewer').addClass('failure')
+  $('#list-viewer-message').text('Failed to retrieve your list.')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('failure')
+  $('#list-viewer').empty()
 }
 
 const deleteListByIdSuccess = function (data) {
-  // console.log(data)
-  $('#list-viewer').text('List successfully deleted.')
-  $('#list-viewer').removeClass()
-  $('#list-viewer').addClass('success')
+  $('#list-viewer-message').text('List successfully deleted.')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('success')
+  $('#list-viewer').empty()
+  // console.log('SOURCE: ui.js')
 }
 
 const deleteListByIdFailure = function () {
-  $('#list-viewer').text('Failed to delete your list.')
-  $('#list-viewer').removeClass()
-  $('#list-viewer').addClass('failure')
+  $('#list-viewer-message').text('Failed to delete your list.')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('failure')
 }
 
-const updateListbyIdSuccess = function (data) {
-  $('#list-viewer').text('List updated. new list data is: ' + data)
-  $('#list-viewer').removeClass()
-  // console.log(data)
+const updateListByIdSuccess = function (data) {
+  const viewUpdatedListById = useListHandlerTemplate({ list: data.list })
+  $('#list-viewer').html(viewUpdatedListById)
+  $('#list-viewer-message').text('List successfully updated')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('success')
+  console.log('SOURCE: ui.js - success')
 }
 
-const updateListbyIdFailure = function (data) {
-  $('#list-viewer').text('Failed to update your list.')
-  // console.log(data)
-}
-
-const clearListsViewer = () => {
-  $('#list-viewer').empty()
+const updateListByIdFailure = function (data) {
+  $('#list-viewer-message').text('Failed to update your list.')
+  $('#list-viewer-message').removeClass()
+  $('#list-viewer-message').addClass('failure')
+  console.log(data)
 }
 
 module.exports = {
@@ -166,7 +172,6 @@ module.exports = {
   viewListByIdFailure,
   deleteListByIdSuccess,
   deleteListByIdFailure,
-  updateListbyIdSuccess,
-  updateListbyIdFailure,
-  clearListsViewer
+  updateListByIdSuccess,
+  updateListByIdFailure
 }
