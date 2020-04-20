@@ -1,129 +1,83 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
-# browser-template
-
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
-
-## Installation
-
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
-
-## Structure
-
-### Scripts
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
+# Shopping List Tracker (Client)
+This is a front-end application which allows a User to access and edit their own saved shopping lists. User authentication and user lists are handled through a custom back-end API (see links below).
 
 
-## Additional Resources
+## Relevant Links
++ Link to [API Repository](https://github.com/lizcramerfox/shopping-list-api)
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
++ Link to [Deployed API](https://apricot-custard-90647.herokuapp.com/)
 
-## [License](LICENSE)
++ Link to [Deployed Client](https://lizcramerfox.github.io/shopping-list-client/)
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+
+## Wireframe & User Stories
+##### [Client Site Wireframe](https://imgur.com/a/lZlqj7a)
+
+![Wireframe Image](https://i.imgur.com/7cNnOLb.jpg)
+
+
+##### User Stories
++ As a new user, I'd like to create an account
++ As a user with an account, I would like to sign in
++ As a signed-in user, I'd like to change my password
++ As a signed-in user, I'd like to log out
++ As a signed-in user, I'd like to create a new list
++ As a signed-in user, I'd like to see a list of all my lists so I can select one
++ As a list owner, I'd like to view/edit my list
++ As a list owner, I'd like to rename my list
++ As a list owner, I'd like to edit the text in my list
++ As a list owner, I'd like to save changes to my list
++ As a list owner, I'd like to ONLY save changes to my list after I confirm
++ As a list owner, I'd like to delete my list
++ As a list user, I'd like to enter my list data as plain text into a text box
++ As a list user, I'd like to enter my list data as individual line items
++ As a list user, I'd like to be able to check unchecked items, and uncheck checked items
++ As a list user, I'd like my list items to sort alphabetically
++ As a list user, I'd like to sort my list so unpurchased items (not checked off) are all at the top of the list, followed by already-purchased items (checked)
+
+
+## Technologies Used
+
++ HTML, CSS/SASS, Handlebars (*NOTE: Bootstrap provided in browser template, but not used in this project*)
+
++ Ruby, Ruby on Rails
+
++ JavaScript, jQuery/AJAX
+
++ Templates *(provided by General Assembly Boston)*:
+  + [Rails API Template](https://git.generalassemb.ly/ga-wdi-boston/rails-api-template)
+  + [Browser Template](https://git.generalassemb.ly/ga-wdi-boston/browser-template)
+
+
+### Unsolved Problems for Future Versions
+##### Authentication
+- When User is logged in, display the User's email address (i.e. "*Currently logged in as: example@email.com*").
+
+- Float all User-Authentication UI items to the left into their own sidebar.
+
+##### Lists
++ When User updates a list (PATCH), remove all null fields from JSON to prevent them overwriting existing data.
+
++ Change "Content" field into multiple "List Item" fields (i.e. split content section into individual line items which he user can create/update/delete individually).
+
++ Add checkbox functionality to List Items, wherein a "checked" List Item is rendered to diplay in the UI in gray italics (or other styling to represent a "done" state).
+
++ Upon log-in, User's lists collection should automatically display in sidebar (right) with a link to each list, using the ```<list[id]>``` and ```<list[title]>``` as the link's text. Also, remove existing "View All Lists" button from UI.
+
++ Move "Update List" and "Delete List" buttons to only appear *within* the list that is *currently displayed* on the screen. Remove inputs where User is asked to provide the List's ID and updated list-events.js to automatically provide the ```<list[id]>``` of the currently-displayed list.
+
+
+
+
+### Planning & Development Narrative
+In an effort to *not* try reinventing the wheel, I always first reference my client's specifications and timeline (in this case, the client is my course - General Assembly Boston SEI-09). Luckily, they provided me with some very thorough input on those fronts, so I followed their directions and began by creating my:
+
+  1. User Stories
+  2. Front-End Wireframe
+  3. Back-End ERD
+
+I've come to like this order regardles of instructions because the User Stories dictate what the UI must present (Front-End Wireframe), and that in turn also dictates the entitites and relationships you'll need to scaffold the back-end. However, I do still sometimes find myself skipping steps and growing to regret it.
+
+In this case, the biggest struggle I had came while I was debugging - particularly the "Update" patch request for updating lists. It turns out that if I had *continued* following the steps laid out by my client (GA Boston), I would have saved many hours due to a small typo in my routing. GA told me that I should FIRST create curl scripts to test my routes before moving on, but I did not, thinking this step an unnecessary excercise. My reasoning was that the curl scripts are never directly used in the final product (instead we use AJAX calls) - and yet, it turns out that this tiny step would have alerted me about my mistake and directed me to specific place the problem originated (typos between my API and Client).
+
+This challenging lesson was instead learned the hard way, as I tried every other conceivable way of finding the error with no luck. After many hours of that, I finally thought "maybe I should just double-check that this obvious element is indeed correctly written" and, voila! The curl-script errored out immediately, making the mistake obvious and easy to fix.

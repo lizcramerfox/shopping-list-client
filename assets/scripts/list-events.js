@@ -18,6 +18,7 @@ const onCreateNewList = function (event) {
   event.preventDefault()
   // console.log('SOURCE: api.js')
   const data = getFormFields(event.target)
+  // console.log('create list object is: ' + data)
   api.createNewList(data.list)
     .then(ui.createNewListSuccess)
     .catch(ui.createNewListFailure)
@@ -37,7 +38,7 @@ const onViewListById = function (event) {
 // DELETE LIST BY ID (View a user's list individually by ID)
 const onDeleteListById = function (event) {
   event.preventDefault()
-  console.log('SOURCE: api.js')
+  // console.log('SOURCE: api.js')
   const data = getFormFields(event.target)
   // console.log('here is', data.list.id)
   api.deleteListById(data.list.id)
@@ -47,9 +48,8 @@ const onDeleteListById = function (event) {
 
 const onUpdateListById = function (event) {
   event.preventDefault()
-  console.log('SOURCE: list-events.js - update')
   const data = getFormFields(event.target)
-  api.updateListById(data.list.id)
+  api.updateListById(data.list)
     .then(ui.updateListByIdSuccess)
     .catch(ui.updateListByIdFailure)
 }

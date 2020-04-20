@@ -3,9 +3,9 @@
 const config = require('./config')
 const store = require('./store')
 
-/////////////////////////////
-//   USER AUTHENTICATION   //
-/////////////////////////////
+/// /////////////////////// ///
+//    USER AUTHENTICATION    //
+/// /////////////////////// ///
 
 const signUp = function (data) {
   // console.log('You are now in: api.js')
@@ -49,9 +49,9 @@ const signOut = function (data) {
   })
 }
 
-/////////////////////////////
-//  SHOPPING LIST ROUTES   //
-/////////////////////////////
+/// /////////////////////// ///
+//    SHOPPING LIST ROUTES   //
+/// /////////////////////// ///
 
 const viewAllLists = function (data) {
   // console.log('SOURCE: api.js')
@@ -106,8 +106,7 @@ const deleteListById = function (id) {
 }
 
 const updateListById = function (data) {
-  console.log('SOURCE: api.js')
-  console.log('api.js data is...' + data)
+  // console.log('api.js data is: ' + data)
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.id,
     method: 'PATCH',

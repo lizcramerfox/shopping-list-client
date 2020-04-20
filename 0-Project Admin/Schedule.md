@@ -47,9 +47,9 @@ Client
 1.  [x] Create resource (curl then web app)
 1.  [x] Get all of their owned resources (curl then web app)
 1.  [x] Delete single resource (curl then web app)
-1.  [ ] Update single resource (curl then web app)
+1.  [x] Update single resource (curl then web app)
 
 ### Final Touches
 1.  [ ] README
-2.  [ ] Troubleshoot/Debug
-3.  [ ] Style
+2.  [x] Troubleshoot/Debug
+3.  [x] Style

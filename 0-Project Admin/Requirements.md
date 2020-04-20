@@ -6,8 +6,8 @@ In order to get a satisfactory score, by the time you present your project, you
 ### Deployment
 Be deployed online, where the rest of the world can access it.
 1.  [x]  Host on your public Github page, not Github Enterprise.
-1.  [ ]  Deploy client application on GH pages.
-1.  [ ]  Deploy server application on Heroku.
+1.  [x]  Deploy client application on GH pages.
+1.  [x]  Deploy server application on Heroku.
 
 ### Version Control
 Demonstrate using version control by:
@@ -21,19 +21,19 @@ of the project week.
 Produce documentation in the form of a **README**, which must:
 1.  [x] Create 2 Github repos (one for your front-end and one for your back-end)
 1.  [x] Pin both repositories on GitHub as a Popular Repository
-1.  [ ] Each repo will need a README.md file with a link to the other repo and an explanation of the what the app does and how it works.
-1.  [ ] Each repo must contain the link to both deployed sites
-1.  [ ] Complete the repository `Description` field and `Website` field with a meaningful sentence description of the application and link to the live URL
+1.  [x] Each repo will need a README.md file with a link to the other repo and an explanation of the what the app does and how it works.
+1.  [x] Each repo must contain the link to both deployed sites
+1.  [x] Complete the repository `Description` field and `Website` field with a meaningful sentence description of the application and link to the live URL
 ![github image](https://git.generalassemb.ly/storage/user/3667/files/beae41ae-aaaa-11e7-8867-63958d376a0b)
-1.  [ ] List technologies used
-1.  [ ] List unsolved problems which would be fixed in future iterations.
-1.  [ ] Document your planning and tell a story about your development process and problem-solving strategy.
+1.  [x] List technologies used
+1.  [x] List unsolved problems which would be fixed in future iterations.
+1.  [x] Document your planning and tell a story about your development process and problem-solving strategy.
 
 Your front-end repo's README should also have
-1.  [ ] Link to wireframes and user stories.
+1.  [x] Link to wireframes and user stories.
 
 Your back-end repo's README should also have
-1.  [ ] Link to Entity Relationship Diagram (ERD).
+1.  [x] Link to Entity Relationship Diagram (ERD).
 
 ### Auth Specifications
 1.  [x] Signup with email, password, and password confirmation.
@@ -43,7 +43,7 @@ Your back-end repo's README should also have
 1.  [x] Signup and Signin must only be available to not signed in users.
 1.  [x] Logout and Change password must only be available to signed in users.
 1.  [x] Give feedback to the user after each action's success or failure.
-1.  [ ] All forms must clear after submit success and user sign-out
+1.  [x] All forms must clear after submit success and user sign-out
     - [ ] (Optional) Reset form to initial state on failure
 
 ### Client Specifications
@@ -52,12 +52,12 @@ Your back-end repo's README should also have
 1.  [x] Use Handlebars for view rendering.
 1.  [x] Have semantically clean HTML and CSS
 1.  [x] User must be able to create a new resource
-1.  [ ] User must be able to update a resource
-1.  [ ] User must be able to delete a resource
-1.  [ ] User must be able to view a single or multiple resource(s)
-1.  [ ] All resource actions that change data must only be available to a signed in user.
-1.  [ ] Give feedback to the user after each action's success or failure.
-1.  [ ] All forms must clear after submit success and user sign-out
+1.  [x] User must be able to update a resource
+1.  [x] User must be able to delete a resource
+1.  [x] User must be able to view a single or multiple resource(s)
+1.  [x] All resource actions that change data must only be available to a signed in user.
+1.  [x] Give feedback to the user after each action's success or failure.
+1.  [x] All forms must clear after submit success and user sign-out
     - [ ] (Optional) Reset form to initial state on failure
 
 
@@ -69,12 +69,12 @@ Your back-end repo's README should also have
 
 ### DO NOT!!
 Your app **must not**:
-1.  [ ]   Delete your repository at any time or start over.
-1.  [ ]   Rely on refreshing the page for any functionality.
-1.  [ ]   Have any user-facing bugs.
-    - [ ] Display non-functional buttons, nor buttons that do not successfully complete a task.
-    - [ ] Show actions at inappropriate times (example:  change password form when a user is not signed in).
-    - [ ] Forms not clearing at appropriate times (example: sign up form not clearing after success).
+1.  [x]   Delete your repository at any time or start over.
+1.  [x]   Rely on refreshing the page for any functionality.
+1.  [x]   Have any user-facing bugs.
+    - [x] Display non-functional buttons, nor buttons that do not successfully complete a task.
+    - [x] Show actions at inappropriate times (example:  change password form when a user is not signed in).
+    - [x] Forms not clearing at appropriate times (example: sign up form not clearing after success).
 1.  [x]   Use alerts for anything.
-1.  [ ]   Display errors or warnings in the console.
+1.  [x]   Display errors or warnings in the console.
 1.  [x]   Display debugging messages in the console.
