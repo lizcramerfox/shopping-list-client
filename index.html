@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Shopping List Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <header>
+        <h1>Shopping List Tracker</h1>
+      </header>
+
+      <section id="authentication">
+        <h3>User Login</h3>
+
+        <div id="auth-message" class="message"></div>
+
+        <div id="sign-up" class="user-auth">
+          <h4>Sign Up</h4>
+          <form>
+            <fieldset>
+              <input type="text" name="credentials[email]" placeholder="Email" class="clear-on-submit">
+              <input type="password" name="credentials[password]" placeholder="Password" class="clear-on-submit">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" class="clear-on-submit">
+              <input type="submit" value="Sign Up" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-in" class="user-auth">
+          <h4>Sign In</h4>
+          <form>
+            <fieldset>
+              <input type="text" name="credentials[email]" placeholder="Email" class="clear-on-submit">
+              <input type="password" name="credentials[password]" placeholder="Password" class="clear-on-submit">
+              <input type="submit" value="Sign In" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="change-pw" class="user-auth hidden">
+          <h4>Change Password</h4>
+          <form>
+            <fieldset>
+              <input type="password" name="passwords[old]" placeholder="Old Password" class="clear-on-submit">
+              <input type="password" name="passwords[new]" placeholder="New Password" class="clear-on-submit">
+              <input type="submit" value="Change Password" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-out" class="user-auth hidden">
+          <h4>Sign Out</h4>
+          <form>
+            <fieldset>
+              <input type="submit" value="Sign Out" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+      </section>
+
+      <section id="user-lists" class="hidden">
+        <h3>My Lists</h3>
+
+        <form id="view-all-lists" class="form">
+          <fieldset>
+            <input type="submit" value="View My Lists" class="list-button">
+          </fieldset>
+        </form>
+
+        <form id="create-new-list" class="form">
+          <fieldset>
+            <input type="text" name="list[title]" placeholder="New List Name" class="clear-on-submit">
+            <input type="text" name="list[listType]" placeholder="New List Type" class="clear-on-submit">
+            <input type="text" name="list[content]" placeholder="New List Content" class="clear-on-submit">
+            <input type="submit" value="Create New List" class="list-button">
+          </fieldset>
+        </form>
+
+        <form id="view-list-by-id" class="form">
+          <fieldset>
+            <input type="text" name="list[id]" placeholder="Enter List ID Number" class="clear-on-submit">
+            <input type="submit" value="View My List" class="list-button">
+          </fieldset>
+        </form>
+
+        <form id="delete-list-by-id" class="form">
+          <fieldset>
+            <input type="text" name="list[id]" placeholder="Enter List ID Number" class="clear-on-submit">
+            <input type="submit" value="Delete My List" class="list-button">
+          </fieldset>
+        </form>
+
+        <form id="update-list-by-id" class="form">
+          <fieldset>
+            <input type="text" name="list[id]" placeholder="Enter List ID Number" class="clear-on-submit">
+            <input type="text" name="list[title]" placeholder="Enter NEW List Title" class="clear-on-submit">
+            <input type="text" name="list[listType]" placeholder="Enter NEW List Type" class="clear-on-submit">
+            <input type="text" name="list[content]" placeholder="Enter NEW List Content" class="clear-on-submit">
+            <input type="submit" value="Update This List" class="list-button">
+          </fieldset>
+        </form>
+
+        <div id="list-viewer-message"></div>
+        <div id="list-viewer"></div>
+
+
+      </section>
+
+
+    </body>
+</html>
